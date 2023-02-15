@@ -9,6 +9,8 @@ public class OdenaSings {
         palavras.add("Alura online");
         palavras.add("editora casa do codigo");
         palavras.add("psg");
+        palavras.add("Bayer");
+        palavras.add("City");
 
         // fazendo a ordenação da nossa lista por tamanho da string para isso vamos usar a interface Comparator
         // precisamos criar uma classe e implementar a interface Comparator
