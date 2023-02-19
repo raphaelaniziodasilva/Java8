@@ -15,6 +15,19 @@ public class OdenaSings {
         // fazendo a ordenação da nossa lista por tamanho da string do menor para o maior
         // vamos usar o metodo sort do java para fazer a ordenação da nossa lista
         // o lambdas -> e parecido com as arrow function => usam a mesma forma
+
+        // primeira forma utilizando o lambda
+        // fazendo a ordenação da lista utilizando o metodo sort do java e comparando duas strings uma com a outra
+        palavras.sort((s1, s2) -> {
+            if(s1.length() < s2.length())
+                return -1;
+            if(s1.length() > s2.length())
+                return 1;
+            return 0;
+        });
+
+        // segunda forma utilizando o lambda junto com o metodo compare
+        // fazendo a ordenação da lista utilizando o metodo sort do java
         palavras.sort((s1, s2) -> {
             // utilizando metodo compare do java para comparar duas strings uma com a outra
             return Integer.compare(s1.length(), s2.length());
