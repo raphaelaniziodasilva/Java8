@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class CursoTeste {
     public static void main(String[] args) {
@@ -50,8 +51,25 @@ public class CursoTeste {
                 .sum();
         System.out.println(total);
 
+        System.out.println("---------------------------");
 
+        // retornando quaquer curso tenha mais de 100 alunos
+        cursos.stream()
+                .filter(c -> c.getAlunos() >= 100)
+                // encontrando um curso com mais de 10 alunos
+                .findAny()
+                // se encontrar imprima
+                .ifPresent(c -> System.out.println(c.getNome()));
 
+        System.out.println("---------------------------");
+
+        cursos.stream()
+                .filter(c -> c.getAlunos() >= 100)
+                .collect(Collectors.toMap(
+                        c -> c.getNome(),
+                        c -> c.getAlunos()))
+                .forEach((nome, alunos) -> System.out.println(nome + " tem " + alunos + " alunos"));
+
+        }
 
     }
-}
